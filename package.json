@@ -1,0 +1,79 @@
+{
+  "name": "spotify-fy",
+  "version": "0.0.1",
+  "description": "Sample Spotify player",
+  "main": "public/index.ts",
+  "scripts": {
+    "test": "jest --coverage",
+    "hmr": "npm run build:dev && NODE_ENV=development webpack-dev-server --hot",
+    "build:dev": "NODE_ENV=development webpack",
+    "build:prod": "NODE_ENV=production webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tomekbuszewski/spotify-fy.git"
+  },
+  "keywords": [
+    "react",
+    "spotify"
+  ],
+  "author": "Tomek Buszewski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomekbuszewski/spotify-fy/issues"
+  },
+  "homepage": "https://github.com/tomekbuszewski/spotify-fy#readme",
+  "dependencies": {
+    "axios": "^0.18.1",
+    "core-js": "^3.4.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-hot-loader": "^4.12.18",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/plugin-proposal-decorators": "^7.7.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "@babel/preset-typescript": "^7.7.2",
+    "@hot-loader/react-dom": "^16.11.0",
+    "@testing-library/react": "^9.3.2",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^11.15.2",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-redux": "^7.1.5",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "babel-loader": "^8.0.6",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-eslint-plugin": "^2.1.0",
+    "eslint-plugin-jest": "^22.21.0",
+    "eslint-plugin-react": "^7.16.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.3.1",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^1.11.1",
+    "react-docgen-typescript-loader": "^3.5.0",
+    "script-ext-html-webpack-plugin": "^2.1.4",
+    "terser-webpack-plugin": "^1.4.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-manifest-plugin": "^2.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

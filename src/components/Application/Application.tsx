@@ -1,17 +1,15 @@
 import * as React from "react";
 import { hot } from "react-hot-loader";
 import { Provider } from "react-redux";
+import { ThemeProvider } from "styled-components";
 
 import store from "@redux/store";
-
-import { AsyncComponent, Paragraph, Users } from "@components";
+import { theme } from "@ui/theme";
 
 export const ApplicationComponent = () => (
-  <Provider store={store}>
-    <Paragraph>Hello</Paragraph>
-    <Users />
-    <AsyncComponent />
-  </Provider>
+  <ThemeProvider theme={theme}>
+    <Provider store={store}>hello</Provider>
+  </ThemeProvider>
 );
 
 export const Application = hot(module)(ApplicationComponent);

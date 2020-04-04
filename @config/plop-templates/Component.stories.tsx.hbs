@@ -1,10 +1,14 @@
 import * as React from "react";
 
 import { text } from "@storybook/addon-knobs";
-import { storiesOf } from "@storybook/react";
 
 import { {{pascalCase name}} } from "./";
 
-storiesOf("{{pascalCase type}}/{{pascalCase name}}", module).add("Normal", () => (
+export const Normal = () => (
   <{{pascalCase name}}>{text("Example text", "Hello")}</{{pascalCase name}}>
-));
+);
+
+export default {
+  component: {{pascalCase name}},
+  title: "{{pascalCase type}}/{{pascalCase name}}"
+}

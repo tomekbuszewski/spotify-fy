@@ -4,8 +4,8 @@ import reboot from "styled-reboot";
 import { theme, BASE_SIZE } from "./theme";
 
 const rebootOptions = {
-  // bodyBg: theme.colors.background,
-  // bodyColor: theme.colors.text,
+  bodyBg: theme.colors.background,
+  bodyColor: theme.colors.text,
   fontFamilyBase: theme.fonts.faces.primary,
   fontWeightBase: 500,
   linkHoverDecoration: "none",

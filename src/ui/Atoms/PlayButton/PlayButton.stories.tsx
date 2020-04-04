@@ -1,10 +1,14 @@
 import * as React from "react";
 
-import { text } from "@storybook/addon-knobs";
-import { storiesOf } from "@storybook/react";
+import { boolean } from "@storybook/addon-knobs";
 
 import { PlayButton } from "./";
 
-storiesOf("Atoms/PlayButton", module).add("Normal", () => (
-  <PlayButton>{text("Example text", "Hello")}</PlayButton>
-));
+export const Normal = () => (
+  <PlayButton active={boolean("Is playing", false)} />
+);
+
+export default {
+  component: PlayButton,
+  title: "Atoms/PlayButton",
+}

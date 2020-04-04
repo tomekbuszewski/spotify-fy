@@ -1,3 +1,5 @@
+import transition from "@services/transitions";
+
 export interface ITheme {
   animations: {
     easing: string;
@@ -32,7 +34,7 @@ export interface ITheme {
 
 export const BASE_SIZE = 8;
 
-const rem = (input: number, base: number = BASE_SIZE): string =>
+export const rem = (input: number, base: number = BASE_SIZE): string =>
   `${input / base}rem`;
 
 export const theme: ITheme = {
@@ -60,9 +62,7 @@ export const theme: ITheme = {
       small: rem(12),
     },
     spacings: {
-      small: rem(26),
-      medium: rem(32),
-      mediumDesktop: rem(38),
+      small: rem(18),
     },
     faces: {
       primary: "Sen, Helvetica, Arial, sans-serif",
@@ -70,3 +70,9 @@ export const theme: ITheme = {
     },
   },
 };
+
+export const withTransition = (
+  prop: string | string[],
+  time: string = theme.animations.long,
+  easing: string = theme.animations.easing,
+) => transition(prop, time, easing);

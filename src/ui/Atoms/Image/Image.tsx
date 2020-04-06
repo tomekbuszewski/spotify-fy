@@ -14,7 +14,12 @@ const Image = (props: Props) => {
     : props.srcSet;
 
   return (
-    <StyledImage {...props} alt={props.alt || props.title} srcSet={srcSet} />
+    <StyledImage
+      {...props}
+      alt={props.alt || props.title}
+      srcSet={srcSet}
+      className={props.className}
+    />
   );
 };
 

@@ -18,6 +18,8 @@ interface Props extends BaseProps {
   duration: number;
   start?: number;
   receiver?: (input: number) => void;
+  progress?: number;
+  onMouseUp: any;
 }
 
 const SeekBar = (props: Props) => {
@@ -29,19 +31,28 @@ const SeekBar = (props: Props) => {
     <React.Fragment>
       <StyledSeekBarWrapper>
         <StyledSeekBarProgress
-          progress={getPercentage(props.duration, currentPosition, true) as string}
+          progress={
+            getPercentage(
+              props.duration,
+              props.progress || currentPosition,
+              true,
+            ) as string
+          }
         />
         <StyledSeekBarInput
+          onMouseUp={props.onMouseUp}
           type="range"
+          step={0.01}
           min={0}
           max={props.duration}
           defaultValue={currentPosition}
           onChange={e => {
             const value = Number(e.target.value);
-            setCurrentPosition(value);
 
             if (props.receiver) {
               props.receiver(value);
+            } else {
+              setCurrentPosition(value);
             }
           }}
         />

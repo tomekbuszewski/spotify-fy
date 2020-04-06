@@ -15,7 +15,7 @@ const TestWrapper = ({ children, testId }: Props) => {
     return children;
   }
 
-  return React.Children.map(children, (Child: React.ReactElement, i) => {
+  return React.Children.map(children, (Child: React.ReactElement) => {
     if (Child) {
       return <Child.type {...Child.props} data-testid={testId} />;
     }

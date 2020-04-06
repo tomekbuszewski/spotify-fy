@@ -10,8 +10,8 @@ import { StyledPlayButton } from "./PlayButton.styles";
 import { BaseProps as Props } from "./PlayButton.types";
 
 const PlayButton = (props: Props) => (
-  <StyledPlayButton active={props.active}>
-    {props.active ? <IoIosPlay /> : <IoIosPause />}
+  <StyledPlayButton {...props}>
+    {props.active ? <IoIosPause /> : <IoIosPlay />}
   </StyledPlayButton>
 );
 

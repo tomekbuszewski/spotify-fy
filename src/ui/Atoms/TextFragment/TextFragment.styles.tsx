@@ -41,11 +41,7 @@ const StyledTextFragment = styled.p<Props>`
       opacity: 1;
       
       ${p => p.theme.breakpoints.tablet} {
-        max-width: ${rem(600)};
-      }
-      
-      ${p => p.theme.breakpoints.desktop} {
-        max-width: ${rem(800)};
+        max-width: ${rem(300)};
       }
     `};
 `;

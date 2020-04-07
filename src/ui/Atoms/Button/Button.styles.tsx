@@ -25,6 +25,7 @@ const StyledButton = styled.button<Props>`
   
   min-width: ${rem(24)};
   height: ${rem(24)};
+  margin-bottom: ${rem(12)};
   
   text-align: center;
   
@@ -37,7 +38,6 @@ const StyledButton = styled.button<Props>`
     text-transform: uppercase;
     
     height: auto;
-    opacity: 1;
     
     ${p => p.theme.breakpoints.desktop} {
       padding-right: ${rem(24)};

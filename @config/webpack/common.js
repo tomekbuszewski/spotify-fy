@@ -4,6 +4,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
+const Dotenv = require("dotenv-webpack");
 
 const getPaths = require("../../src/services/moduleAlias");
 
@@ -87,6 +88,8 @@ const plugins = [
   new ScriptExtHtmlWebpackPlugin({
     defaultAttribute: "async",
   }),
+
+  new Dotenv(),
 ];
 
 module.exports = {

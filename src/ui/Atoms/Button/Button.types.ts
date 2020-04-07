@@ -14,4 +14,5 @@ export enum ATOM_BUTTON_TEST_IDS {
 export interface BaseProps {
   children?: React.ReactNode;
   variant?: BUTTON_VARIANTS;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => any;
 }

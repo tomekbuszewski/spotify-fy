@@ -13,13 +13,14 @@
     "strict": true,
     "target": "esnext",
     "paths": {
-      "@config/*": ["./@config/*"],
-      "@components/*": ["./src/components/*"],
       "@components": ["./src/components"],
-      "@redux/*": ["./src/redux/*"],
-      "@src/*": ["./src/*"],
-      "@ui/*": ["./src/ui/*"],
+      "@components/*": ["./src/components/*"],
+      "@config/*": ["./@config/*"],
+      "@pages/*": ["./src/pages/*"],
       "@services/*": ["./src/services/*"],
+      "@src/*": ["./src/*"],
+      "@translations/*": ["./src/translations/*"],
+      "@ui/*": ["./src/ui/*"],
       "__mocks__/*": ["./__mocks__/*"]
     }
   },

@@ -1,16 +1,13 @@
 import { combineReducers } from "redux";
 
-import counter, { ICounterReducer } from "./counter/reducer";
-import users, { IReduxUserReducer } from "./users/reducer";
+import playlist, { IPlaylistReducer } from "./playlist/reducer";
 
 export interface IReduxStore {
-  counter: ICounterReducer;
-  users: IReduxUserReducer;
+  playlist: IPlaylistReducer;
 }
 
 export const appReducers = {
-  counter,
-  users,
+  playlist,
 };
 
 export default combineReducers(appReducers);

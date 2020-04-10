@@ -13,7 +13,8 @@
     "lint": "npm run lint:css && npm run lint:js",
     "commit": "npx git-cz",
     "build:dev": "NODE_ENV=development webpack",
-    "build:prod": "NODE_ENV=production webpack --mode=production"
+    "build:prod": "NODE_ENV=production webpack --mode=production",
+    "build:netlify": "node scripts/env.js && npm run build:prod"
   },
   "repository": {
     "type": "git",

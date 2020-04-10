@@ -13,10 +13,11 @@
     "strict": true,
     "target": "esnext",
     "paths": {
-      "@components": ["./src/components"],
       "@components/*": ["./src/components/*"],
+      "@containers/*": ["./src/containers/*"],
       "@config/*": ["./@config/*"],
       "@pages/*": ["./src/pages/*"],
+      "@redux/*": ["./src/redux/*"],
       "@services/*": ["./src/services/*"],
       "@src/*": ["./src/*"],
       "@translations/*": ["./src/translations/*"],

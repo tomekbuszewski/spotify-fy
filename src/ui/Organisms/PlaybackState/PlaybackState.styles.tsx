@@ -32,6 +32,7 @@ const StyledPlaybackState = styled.div<Props>`
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 100;
 
   padding: ${rem(4)};
 
@@ -63,10 +64,11 @@ const StyledWrapper = styled.div<StyledWrapperProps>`
 `;
 
 const CoverWrapper = styled(StyledWrapper)`
-  width: ${rem(40)};
+  display: none;
 
   ${p => p.theme.breakpoints.tablet} {
-    width: ${p => (p.auto ? "auto" : "100%")};
+    display: flex;
+    width: 20%;
   }
 `;
 

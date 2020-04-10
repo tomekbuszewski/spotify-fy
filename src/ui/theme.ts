@@ -53,6 +53,7 @@ export const theme: ITheme = {
     highlight: "#282828",
   },
   breakpoints: {
+    mobileHorizontal: "@media (min-width: 480px)",
     tablet: "@media (min-width: 768px)",
     desktop: "@media (min-width: 1024px)",
     desktopLarge: "@media (min-width: 1200px)",

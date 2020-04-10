@@ -13,24 +13,9 @@ import {
   ORGANISM_PLAYLIST_TESTID as TEST_IDS,
 } from "./Playlist.types";
 
-import { PlaylistItem } from "@ui/Molecules";
-import { IPlaylistItem } from "@ui/Molecules/PlaylistItem/PlaylistItem.types";
-
-interface Props extends BaseProps {
-  items: IPlaylistItem[];
-}
-
-const Playlist = (props: Props) => (
+const Playlist = (props: BaseProps) => (
   <TestWrapper testId={TEST_IDS.WRAPPER}>
-    <StyledPlaylist>
-      {props.items.map(item => (
-        <PlaylistItem
-          {...item}
-          key={`${item.artist} ${item.title}`}
-          onClick={() => alert("ASD")}
-        />
-      ))}
-    </StyledPlaylist>
+    <StyledPlaylist>{props.children}</StyledPlaylist>
   </TestWrapper>
 );
 

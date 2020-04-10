@@ -15,13 +15,24 @@ const hasExistingToken = (): string | void => {
   }
 };
 
-function tokenHandler(setter: (param: string) => void): void {
+const setToken = (token: string, expiry = 3600): void => {
+  const expiration = expiry * 1000;
+
+  localStorage.setItem(TOKEN_KEY, token);
+  localStorage.setItem(TOKEN_EXPIRY_KEY, String(Date.now() + expiration));
+  window.location.hash = "";
+};
+
+function tokenHandler(setter?: (param: string) => void): void | string {
   if (IS_CLIENT) {
     const existing = hasExistingToken();
 
     if (existing) {
-      setter(existing);
-      return;
+      if (setter) {
+        setter(existing);
+        return;
+      }
+      return existing;
     }
 
     const { access_token, expires_in } = query<{
@@ -30,14 +41,17 @@ function tokenHandler(setter: (param: string) => void): void {
     }>(window.location.hash.substring(1));
 
     if (access_token) {
-      const expiration = Number(expires_in || 3600) * 1000;
+      setToken(access_token, Number(expires_in));
 
-      localStorage.setItem(TOKEN_KEY, access_token);
-      localStorage.setItem(TOKEN_EXPIRY_KEY, String(Date.now() + expiration));
-      window.location.hash = "";
-      setter(access_token);
+      if (setter) {
+        setter(access_token);
+        return;
+      }
+
+      return access_token;
     }
   }
 }
 
+export { setToken };
 export default tokenHandler;

@@ -1,13 +1,16 @@
 import * as React from "react";
+import { Provider } from "react-redux";
+import { ThemeProvider } from "styled-components";
 import { hot } from "react-hot-loader";
 
 import { Login } from "@pages/Login";
-import tokenHandler from "@services/tokenHandler";
-import { theme } from "@ui/theme";
-import { ThemeProvider } from "styled-components";
-import { GlobalStyle } from "@ui/globalStyle";
+import { Routing } from "@components/Routing";
 
-const TokenContext = React.createContext<string>("");
+import { theme } from "@ui/theme";
+import { GlobalStyle } from "@ui/globalStyle";
+import store from "@redux/store";
+
+import tokenHandler from "@services/tokenHandler";
 
 export const ApplicationComponent = () => {
   const [token, setToken] = React.useState<string>();
@@ -18,22 +21,14 @@ export const ApplicationComponent = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <React.Fragment>
-        <GlobalStyle />
-        <Login />
-      </React.Fragment>
+      <Provider store={store}>
+        <React.Fragment>
+          <GlobalStyle />
+          {token ? <Routing /> : <Login />}
+        </React.Fragment>
+      </Provider>
     </ThemeProvider>
   );
-
-  // if (token) {
-  //   return (
-  //     <TokenContext.Provider value={token}>
-  //       Hello from app
-  //     </TokenContext.Provider>
-  //   );
-  // }
-  //
-  // return <Login />
 };
 
 export const Application = hot(module)(ApplicationComponent);

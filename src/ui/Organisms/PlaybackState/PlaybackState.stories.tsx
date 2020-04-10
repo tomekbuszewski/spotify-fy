@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { PlaybackState } from "./";
-import { IPlaylistItem } from "@ui/Molecules/PlaylistItem/PlaylistItem.types";
+import { IPlaylistItem } from "@redux/playlist/typings";
 
 const song: IPlaylistItem = {
   artist: "Radiohead",

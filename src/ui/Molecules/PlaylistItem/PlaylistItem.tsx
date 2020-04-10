@@ -14,19 +14,25 @@ import {
 } from "./PlaylistItem.styles";
 import {
   BaseProps,
-  IPlaylistItem,
   MOLECULE_PLAYLIST_ITEM_TESTID as TEST_IDS,
 } from "./PlaylistItem.types";
 
 import { TEXT_FRAGMENT_VARIANTS } from "@ui/Atoms/TextFragment/TextFragment.types";
 import { TextFragment } from "@ui/Atoms";
 
+import { IPlaylistItem } from "@redux/playlist/typings";
+import secondsToTime from "@services/secondsToTime";
+
 interface Props extends BaseProps, IPlaylistItem {}
 
 const PlaylistItem = (props: Props) => (
   <TestWrapper testId={TEST_IDS.WRAPPER}>
     <StyledPlaylistItem active={props.active} onClick={props.onClick}>
-      <TestWrapper testId={props.active ? TEST_IDS.PLAY_BUTTON_ACTIVE : TEST_IDS.PLAY_BUTTON}>
+      <TestWrapper
+        testId={
+          props.active ? TEST_IDS.PLAY_BUTTON_ACTIVE : TEST_IDS.PLAY_BUTTON
+        }
+      >
         <StyledPlayButton active={props.active} />
       </TestWrapper>
       <TestWrapper testId={TEST_IDS.TITLE}>
@@ -42,7 +48,9 @@ const PlaylistItem = (props: Props) => (
         <TextFragment as="small">{props.artist}</TextFragment>
       </TestWrapper>
       <TestWrapper testId={TEST_IDS.DURATION}>
-        <StyledDuration as="span">{props.duration}</StyledDuration>
+        <StyledDuration as="span">
+          {secondsToTime(props.duration)}
+        </StyledDuration>
       </TestWrapper>
     </StyledPlaylistItem>
   </TestWrapper>

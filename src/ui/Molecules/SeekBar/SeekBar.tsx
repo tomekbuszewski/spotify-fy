@@ -19,7 +19,7 @@ interface Props extends BaseProps {
   start?: number;
   receiver?: (input: number) => void;
   progress?: number;
-  onMouseUp: any;
+  onMouseUp?: any;
 }
 
 const SeekBar = (props: Props) => {

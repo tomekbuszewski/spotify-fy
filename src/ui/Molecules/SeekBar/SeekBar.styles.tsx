@@ -27,6 +27,7 @@ const StyledSeekBarProgress = styled.div<SeekBarProps>`
   }
 
   &:before {
+    ${withTransition("width")};
     background: ${p => p.theme.colors.brand};
 
     width: ${p => p.progress};
@@ -34,6 +35,7 @@ const StyledSeekBarProgress = styled.div<SeekBarProps>`
   }
 
   &:after {
+    ${withTransition("left")};
     background: ${p => p.theme.colors.text};
     border-radius: 100%;
 

@@ -1,68 +1,79 @@
 import * as React from "react";
 
 import { Playlist } from "./";
-import { IPlaylistItem } from "@ui/Molecules/PlaylistItem/PlaylistItem.types";
+import { PlaylistItem } from "@ui/Molecules";
+import { IPlaylistItem } from "@redux/playlist/typings";
 
-const ITEMS: IPlaylistItem[] = [
+export const ITEMS: IPlaylistItem[] = [
   {
     artist: "Neil Young",
     title: "Tell Me Why",
-    duration: "2:57",
+    duration: 123,
   },
   {
     artist: "Neil Young",
     title: "After the Gold Rush",
-    duration: "3:45",
+    duration: 123,
   },
   {
     artist: "Neil Young",
     title: "Only Love Can Break Your Heart",
-    duration: "3:08",
+    duration: 123,
   },
   {
     artist: "Neil Young",
     title: "Southern Man",
-    duration: "5:31",
+    duration: 123,
   },
   {
     artist: "Neil Young",
     title: "Till the Morning Comes",
-    duration: "1:16",
+    duration: 123,
   },
   {
     artist: "Neil Young",
     title: "Oh, Lonesome Me",
-    duration: "3:48",
+    duration: 123,
   },
   {
     artist: "Neil Young",
     title: "Don't Let it Bring You Down",
-    duration: "2:56",
+    duration: 123,
   },
   {
     artist: "Neil Young",
     title: "Birds",
-    duration: "2:33",
+    duration: 123,
   },
   {
     artist: "Neil Young",
     title: "When You Dance I Can Really Love",
-    duration: "3:45",
+    duration: 123,
   },
   {
     artist: "Neil Young",
     title: "I Believe in You",
-    duration: "3:27",
+    duration: 123,
   },
   {
     artist: "Neil Young",
     title: "Cripple Creek Ferry",
-    duration: "1:33",
+    duration: 123,
   },
 ];
 
-export const Normal = ({ items = ITEMS }: { items: IPlaylistItem[] }) => (
-  <Playlist items={items} />
+export const SingleSong = () => (
+  <Playlist>
+    <PlaylistItem {...ITEMS[0]} />
+  </Playlist>
+);
+
+export const Normal = () => (
+  <Playlist>
+    {ITEMS.map(item => (
+      <PlaylistItem {...item} key={item.title} />
+    ))}
+  </Playlist>
 );
 
 export default {

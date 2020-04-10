@@ -1,5 +1,5 @@
 export interface BaseProps {
   active?: boolean;
   className?: string;
-  onClick?: (e: any) => any;
+  onClick?: (e?: any) => void;
 }

@@ -1,6 +1,6 @@
 {
   "name": "spotify-fy",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Sample Spotify player",
   "main": "public/index.ts",
   "scripts": {
